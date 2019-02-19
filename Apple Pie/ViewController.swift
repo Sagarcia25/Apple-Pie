@@ -39,7 +39,13 @@ class ViewController: UIViewController {
 
     //function updateUI updates the label with the amount of wins and losses. Also updates the tree image depending the amount of incorect moves left
     func updateUI(){
-        correctWordLabel.text = currentGame.formattedWord
+        var letters = [String]()
+        for letter in currentGame.formattedWord.characters{
+            letters.append(String(letter))
+        }
+        let wordWithSpacing = letters.joined(separator: " ")
+        correctWordLabel.text = wordWithSpacing
+//        correctWordLabel.text = currentGame.formattedWord
         scoreLabel.text = "Wins: \(totalwins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
     }
@@ -49,8 +55,18 @@ class ViewController: UIViewController {
         let letterString = sender.title(for: .normal)!
         let letter = Character(letterString.lowercased())
         currentGame.playerGuessed(letter: letter)
-        updateUI()
+//        updateUI()
+        updateGameState()
+    }
     
+    func updateGameState() {
+        if currentGame.incorrectMovesRemaining == 0{
+            totalLosses += 1
+        } else if currentGame.word == currentGame.formattedWord{
+            totalwins += 1
+        } else {
+            updateUI()
+        }
     }
     
 }
