@@ -27,16 +27,19 @@ class ViewController: UIViewController {
         newRound()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+    //created an instance currentGame of the struct Game
     var currentGame: Game!
     
+    //Function newRound removes the first string in the array. currentGame is given a new word, incorrect moves remaining, and holds letters guessed
     func newRound(){
         let newWord = listOfWords.removeFirst()
         currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
         updateUI()
     }
 
+    //function updateUI updates the label with the amount of wins and losses. Also updates the tree image depending the amount of incorect moves left
     func updateUI(){
+        correctWordLabel.text = currentGame.formattedWord
         scoreLabel.text = "Wins: \(totalwins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
     }
