@@ -5,6 +5,6 @@ Description: The user has to guess letters of the mystery word. The image of the
 the user incorrectly guesses a word. Once the word has been completely guessed right or the user has used up all their mistake
 chances, total wins or total losses will be updated.
 
-https://github.com/Sagarcia25/Apple-Pie/blob/master/TreeG.png
+![Alt text](relative/path/to/img.jpg?raw=true "TreeG")
 
 Technologies used: InterfaceBuilder, UIKit, Foundation, Swift, Xcode
