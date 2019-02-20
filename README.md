@@ -7,4 +7,6 @@ chances, total wins or total losses will be updated.
 
 https://github.com/Sagarcia25/Apple-Pie/blob/master/TreeG.png
 
+![ScreenShot](https://github.com/rajivsharma82/Apple-Pie/blob/master/ApplePie.png)
+
 Technologies used: InterfaceBuilder, UIKit, Foundation, Swift, Xcode
